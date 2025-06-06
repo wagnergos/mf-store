@@ -26,13 +26,6 @@ export default withZephyr()({
     historyApiFallback: true,
     watchFiles: [path.resolve(__dirname, 'src')],
   },
-  output: {
-    // You need to set a unique value that is not equal to other applications
-    uniqueName: 'host',
-    // publicPath must be configured if using manifest
-    publicPath: 'http://localhost:3000/',
-  },
-
   experiments: {
     css: true,
   },
