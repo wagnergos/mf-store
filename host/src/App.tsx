@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 
 const Products = lazy(() => import('products/Products'));
+const Cart = lazy(() => import('cart/Cart'));
 
 import './index.css';
 
@@ -20,7 +21,10 @@ const App = () => (
       </section>
 
       <section className="bg-white p-4 rounded-lg shadow">
-        <h2 className="text-2xl mb-4">Your Cart</h2>
+        <h2 className="text-2xl font-bold mb-4">Your Cart</h2>
+        <Suspense fallback={<div>Loading Cart...</div>}>
+          <Cart />
+        </Suspense>
       </section>
     </main>
   </div>
